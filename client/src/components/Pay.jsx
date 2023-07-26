@@ -23,9 +23,9 @@ function Pay(props) {
     const update = e => {
         e.preventDefault();
         const updatedService = {
-            type:service.type,
+            category:service.category,
             description:service.description,
-            name:service.name,
+            title:service.title,
             price:service.price,
             appointments:[...service.appointments,{name,date,link}]
         }

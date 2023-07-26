@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import Footer from '../components/Footer/Footer'
 
 function Main(props) {
     const [services, setServices] = useState([]);
@@ -19,7 +21,9 @@ function Main(props) {
     }, []);
 
     return (
-        <div>
+        
+        <div className="add1">
+        
             <div className='d-flex justify-content-around m-2'>
             <h2>Services list</h2>
             
@@ -38,7 +42,7 @@ function Main(props) {
                 <tbody>
                     {services.map( (service, i) =>
                     <tr>
-                        <td>{service.type}</td>
+                        <td>{service.category}</td>
                         <td>{service.description}</td>
                         <td>{service.price}</td>
                         <td>
@@ -55,7 +59,9 @@ function Main(props) {
                     )}
                 </tbody>
             </table>
-        </div>
+            
+            </div>
+        
   )
 }
 

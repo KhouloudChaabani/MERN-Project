@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link,useNavigate } from 'react-router-dom';
 
+
 function Main_client(props) {
 
     const [services, setServices] = useState([]);
@@ -39,7 +40,7 @@ function Main_client(props) {
                 <tbody>
                     {services.map( (service, i) =>
                     <tr>
-                        <td>{service.name}</td>
+                        <td>{service.title}</td>
                         <td>{service.description}</td>
                         <td>{service.price}</td>
                         <td>
@@ -74,6 +75,7 @@ function Main_client(props) {
                     )}
                 </tbody>
             </table>
+        
         </div>
   )
 }

@@ -1,0 +1,66 @@
+import React from 'react'
+import "./Header.css";
+import CountUp from "react-countup";
+
+const Header = () => {
+  return (
+    <section className='hero-wrapper'>
+      <div className="paddings innerWidth flexCenter hero-container">
+
+        <div className='flexColStart hero-left'>
+          <div className='flexColStart hero-title'>
+            <h1>Discover </h1>
+            <h1>Most suitable</h1> 
+            <h1>property</h1>
+               
+             
+          </div>
+          <div className='flexColStart hero-des'>
+            <span>csdvsdvsd scsdhcyud hbchsdc hbchsdb </span>
+            <span>cbhdbc bcbd gbcbhc gbchzdb bdchzbc zbdhze</span>
+          </div>
+          <div className='flexCenter search-bar'>
+            <input className='input' type="text" />
+            <button className='button'>Search</button>
+          </div>
+          <div className='flexCenter stats'>
+             < div className='flexStart stat'>
+              <span className='num'>
+                <CountUp  start={1} end={40} duration={6} />
+                <span>+</span><br/>
+                <span className='secondatyText'>
+                  Consultant
+                </span>
+              </span>
+             </div>
+             < div className='flexStart stat'>
+              <span className='num'>
+                <CountUp start={1} end={60} duration={6} />
+                <span>+</span><br/>
+                <span  className='secondatyText'>
+                  Happy Customer
+                </span>
+              </span>
+             </div>
+             < div className='flexStart stat'>
+              <span className='num'>
+                <CountUp start={1} end={6} duration={6} />
+                <span>+</span><br/>
+                <span  className='secondatyText'>
+                  Awards
+                </span>
+              </span>
+             </div>
+          </div>
+        </div>
+        <div className='flexCenter hero-right'>
+         <div className='image-container'>
+          <img  src="https://img.freepik.com/premium-photo/law-legal-system-justice-crime-concept-mallet-gavel-hammer-scales-table-d-render-illustration_628331-196.jpg" alt="law" />
+         </div>
+      </div>
+      </div>
+    </section>
+  )
+}
+
+export default Header
