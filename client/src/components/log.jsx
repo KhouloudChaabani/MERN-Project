@@ -61,7 +61,8 @@ const Log = (props) => {
     }
 
 return (
-   
+    <div className='add1'>
+    <Navbar/>
     <div className="login">
     
       <form onSubmit={handleLoginSubmit}>
@@ -77,7 +78,8 @@ return (
 
       </form>
       </div>
-      
+      </div>
+
       
   );
 }

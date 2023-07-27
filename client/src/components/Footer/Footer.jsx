@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-logo">
-        <img src='./logo.png' width={120} alt="Logo" />
+        <img src='https://images-ext-1.discordapp.net/external/g9x3esQYCKZocD_Olligo3NUDDGo7e_vrsJMMmdJXP0/https/i.ibb.co/dWh0XLY/logo-w.png?width=373&height=393' width={120} alt="Logo" />
         
       </div>
       <div className="footer-contact">

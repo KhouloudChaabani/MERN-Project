@@ -5,15 +5,14 @@ import ErrorPage from './components/ErrorPage';
 import Update from './components/Update';
 import Log from './components/log';
 import Reg from './components/reg';
+import Services from './components/Services';
 
 import View from './components/View';
 import Pay from './components/Pay';
 import Video from './components/Video';
 import Home from './pages/home/Home';
-import Add from './pages/Add/Add';
-import One from './pages/one/One';
+import Add from './components/Add';
 import { useState } from 'react';
-import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -24,11 +23,13 @@ function App() {
   return (  
     
     <div className="App">
-    <Navbar user={user}/>
+    
       <Routes>
       <Route element={<Log setUserName={setUserName} setUser={setUser}/>} path="/log" />
       <Route element={<Reg setUserName={setUserName} setUser={setUser}/>} path="/reg" />
       <Route element={<Ho user={user} userName={userName}/>} path="/movies" />
+      <Route element={<Services user={user} userName={userName}/>} path="/services" />
+
 
         <Route element={<ErrorPage />} path="/unautorized" />
         <Route path='/'element={ <Home user={user}/>}/>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams,useNavigate } from "react-router-dom";
+import Navbar from '../components/Navbar/Navbar';
+
 
 function Pay(props) {
     const { id } = useParams();
@@ -43,6 +45,8 @@ function Pay(props) {
     }
     
   return (
+    <div className='add1'>
+    <Navbar/>
     <div>
         <form onSubmit={update}>
         {errors.map((err, index) => <p key={index} style={{color:"red"}}>{err}</p>)}
@@ -54,6 +58,7 @@ function Pay(props) {
         <iframe src="http://localhost:8000/pay" width={1000} height={550}></iframe>
         <br /><button  className='btn btn-success'>Submit</button>
         </form>
+    </div>
     </div>
   )
 }

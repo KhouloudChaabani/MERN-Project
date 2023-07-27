@@ -4,6 +4,8 @@ import "./Add.scss";
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar'
+
 
 const Add = (props) => {
   const [user,setUser]=useState(props.user)
@@ -46,11 +48,14 @@ const Add = (props) => {
 
 
   return (
+    <div className="add1">
     
+    <Navbar/>
  
     <div className="add">
+    
       <div className="container">
-        <h1>Add New Gig</h1>
+        <h1>Add New Service</h1>
         <form onSubmit={onSubmitHandler}>
         {errors.map((err, index) => <p key={index} style={{color:"red"}}>{err}</p>)}
         <div className="sections">
@@ -84,7 +89,8 @@ const Add = (props) => {
         </div>
         </form>
        </div>
-       
+       </div>
+
     </div>
  
   );

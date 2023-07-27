@@ -1,9 +1,17 @@
-import React from 'react'
+import React , { useState } from 'react'
 import "./Header.css";
 import CountUp from "react-countup";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate(`/services?search=${input}`);
+  };
   return (
+
     <section className='hero-wrapper'>
       <div className="paddings innerWidth flexCenter hero-container">
 
@@ -20,8 +28,14 @@ const Header = () => {
             <span>cbhdbc bcbd gbcbhc gbchzdb bdchzbc zbdhze</span>
           </div>
           <div className='flexCenter search-bar'>
-            <input className='input' type="text" />
-            <button className='button'>Search</button>
+          <input
+          className='input'
+          type="text"
+          
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button className='button'
+        onClick={handleSubmit}>Search</button>
           </div>
           <div className='flexCenter stats'>
              < div className='flexStart stat'>

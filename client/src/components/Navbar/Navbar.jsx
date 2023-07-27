@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'; // Import Axios library
 import "./Navbar.css";
+import { useCookies } from "react-cookie";
 
 const Navbar = (props) => {
-  const [user, setUser] = useState(props.user);
-  
+
+  const [cookies, setCookie] = useCookies();
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     axios.post('http://localhost:8000/api/logout', {}, { withCredentials: true })
       .then(res => {
-        setUser(null); // Clear the user state on successful logout
-        
+        setCookie(null)
         console.log(res.data);
       })
       .catch(err => console.log(err));
@@ -23,15 +24,21 @@ const Navbar = (props) => {
   return (
     <section className='h-wrapper'>
       <div className='flexCenter paddings innerWidth h-container'>
-        <img className='img' src="./logo1.png" alt="logo" width={100} />
+        <img className='img' src="https://images-ext-2.discordapp.net/external/oy4b7x17Wqn1TaNvdgFsn5GUXK-O-m-KLiAbfATf-pY/https/i.ibb.co/qnP66NH/Screenshot-2023-07-25-193023.png?width=373&height=395" alt="logo" width={100} />
         <div className="flexCenter h-menu">
           <Link to='/'>Home</Link>
-          <Link to='/f'>Find your Consultant</Link>
+          <Link to='/services'>Find your Consultant</Link>
           <Link to='/d'>Explore</Link>
 
-          {(user)? (
+          {(cookies.userToken)? (
             // Render logout button if the user is logged in
+            <>
+            <a href='/movies'> <button className='button'>Dashboard</button></a> 
             <button className='button' onClick={handleLogout}>Logout</button>
+            
+            </>
+            
+            
           ) : (
             // Render login and signup links if the user is not logged in
             <>

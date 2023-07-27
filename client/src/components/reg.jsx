@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import "./Login.scss";
+import Navbar from '../components/Navbar/Navbar';
+
 const Reg = (props) => {
     const [user,setUser]=useState(props.user)
     const navigate = useNavigate()
     const [register, setRegister] = useState({
         firstName: '',
-        lastName: '',
+       
         email: '',
         password: '',
         confirmPassword: '',
@@ -17,7 +19,7 @@ const Reg = (props) => {
     const [errors, setErrors] = useState({
         register: {
             firstName: '',
-            lastName: '',
+           
             email: '',
             password: '',
             confirmPassword: ''
@@ -45,7 +47,7 @@ const Reg = (props) => {
                 console.log(res)
                 setRegister({
                     firstName: '',
-                    lastName: '',
+                   
                     email: '',
                     password: '',
                     confirmPassword: '',
@@ -67,7 +69,8 @@ const Reg = (props) => {
 
 
     return (
-
+        <div className='add1'>
+        <Navbar/>
        
     <div className="login">
       
@@ -76,14 +79,11 @@ const Reg = (props) => {
         <form onSubmit={handleRegisterSubmit} className="col-12" >
         <h1>Create a new account</h1>
                             <div >
-                                <label className="form-label"   >First Name</label><br />
+                                <label className="form-label"   >Full Name</label><br />
                                 <input className="form-control" type='text' name='firstName' value={register.firstName} onChange={handleRegisterChange} />
 
                             </div>
-                            <div >
-                                <label className="form-label"       >Last Name</label><br />
-                                <input className="form-control" type='text' name='lastName' value={register.lastName} onChange={handleRegisterChange} />
-                            </div>
+                           
                             <div >
                                 <label className="form-label"      >Email</label><br />
                                 <input className="form-control" type='email' name='email' value={register.email} onChange={handleRegisterChange} />
@@ -105,6 +105,7 @@ const Reg = (props) => {
                             </div>
                             <button type='submit' className='button'>Register</button>
                         </form>
+  </div>
   </div>
  
     )

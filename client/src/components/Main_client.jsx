@@ -22,43 +22,12 @@ function Main_client(props) {
 
   return (
     <div>
-            <div className='d-flex justify-content-around m-2'>
-            <h2>Services list</h2>
-            
-            <div></div>
-            </div>
-            
             <table className='table'>
                 <thead>
                     <tr>
-                        <th>Lawyer Name</th>
-                        <th>Description</th>
+                        <th>Law Consultant </th>
+                        <th>Service </th>
                         <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {services.map( (service, i) =>
-                    <tr>
-                        <td>{service.title}</td>
-                        <td>{service.description}</td>
-                        <td>{service.price}</td>
-                        <td>
-                            <button onClick={(e)=>{nav("/pay/"+service._id)}} className='btn btn-success'>Add Appointment</button>
-                            {/* <button onClick={(e)=>{nav("/movies/"+service._id+"/review")}} className='btn btn-warning'>Write a Review</button> */}
-                        </td>
-                    </tr>
-                    )}
-                </tbody>
-            </table>
-            <div className='d-flex justify-content-around m-2'>
-            <h2>My Appointements:</h2>
-            
-            <div></div>
-            </div>
-            <table className='table'>
-                <thead>
-                    <tr>
                         <th>Date</th>
                         <th>Link to Video Call</th>
                     </tr>
@@ -68,7 +37,12 @@ function Main_client(props) {
                     service.appointments.map( (appointment,i)=>
                     (appointment.name===props.name) ? 
                         <tr>
-                            <td>{appointment.date}</td><td><button onClick={()=>window.open(`https://localhost:3003/r/${appointment.link}`)} className='btn btn-warning'>Start Video Call</button></td>
+                        <td>{props.name}</td>
+                        <td>{service.category}</td>
+                        <td>{service.price} DT</td>
+
+                            <td>{appointment.date}</td>
+                            <td><button onClick={()=>window.open(`https://localhost:3003/r/${appointment.link}`)} className='btn btn-warning'>Start Video Call</button></td>
                         </tr>
                         : <></>
                         )
